@@ -1,0 +1,11 @@
+﻿<div id="listView" data-ng-controller="kx.list.controller.listView">
+	<div>
+		<div class="listItem" data-ng-repeat="item in items">
+			<kx-list-directive-list-item item="item"></kx-list-directive-list-item>
+		</div>
+		<div>
+			<input data-ng-model="newItem" type="text" />
+			<button data-ng-click="controller.addItem(newItem)">Add</button>
+		</div>
+	</div>
+</div>
