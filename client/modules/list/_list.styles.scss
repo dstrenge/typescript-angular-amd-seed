@@ -1,4 +1,122 @@
-﻿.listItem
-{
-    font-size: 14px;
+﻿#listView {
+    text-align: center;
+    margin: 10px;
+
+    .listItem {
+        border: 1px solid black;
+        padding: 10px;
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        margin: 10px;
+    }
+
+    .listItem.ng-enter,
+    .listItem.ng-leave,
+    .listItem.ng-move {
+        position: relative;
+    }
+
+    .listItem.ng-enter {
+        -webkit-animation: 1s listItem-enter;
+        animation: 1s listItem-enter;
+    }
+
+    .listItem.ng-leave {
+        -webkit-animation: 1s listItem-leave;
+        animation: 1s listItem-leave;
+    }
+
+    .listItem-add-button {
+        background-color: #ffd6a9;
+        border: 0;
+        border-radius: 5px;
+        padding: 5px 20px;
+        font-size: 32px;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    .listItem-add-button:focus {
+        outline: 0;
+    }
+
+    .listItem-entry-container {
+        margin-top: 20px;
+    }
+
+    .listItem-entry-input {
+        -webkit-appearance: none;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 5px 20px;
+        font-size: 32px;
+        vertical-align: middle;
+        background-color: rgba(0,0,0,0.1);
+    }
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: rgba(0,0,0,0.3);
+}
+
+@keyframes listItem-enter {
+    from {
+        transform: rotate(720deg);
+        left: 2000px;
+        bottom: -2000px;
+        opacity: 0.5;
+    }
+
+    to {
+        transform: rotate(0deg);
+        left: 0;
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes listItem-enter {
+    from {
+        -webkit-transform: rotate(720deg);
+        left: 2000px;
+        bottom: -2000px;
+        opacity: 0.5;
+    }
+
+    to {
+        -webkit-transform: rotate(0deg);
+        left: 0;
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes listItem-leave {
+    from {
+        left: 0;
+        opacity: 1;
+    }
+
+    to {
+        left: -10px;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes listItem-leave {
+    from {
+        left: 0;
+        opacity: 1;
+    }
+
+    to {
+        left: -10px;
+        opacity: 0;
+    }
 }

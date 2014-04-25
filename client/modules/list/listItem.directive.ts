@@ -12,8 +12,4 @@ export class ListItemDirective implements ng.IDirective {
 		item: "=item"
 	};
 	template: string = listViewPartial;
-
-	link: any = (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes): void => {
-
-	};
 }

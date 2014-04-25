@@ -17,7 +17,7 @@ module List {
 		ListView: listViewPartial
 	};
 
-	export var listModule: ng.IModule = angular.module(moduleName, [])
+	export var listModule: ng.IModule = angular.module(moduleName, ["ngAnimate"])
 		.factory(ConstantsLib.Constants.ListServiceName, listServiceImpl.ListService);
 
 	Common.addController(listModule, ConstantsLib.Constants.ListViewName, listViewImpl.ListViewController);
