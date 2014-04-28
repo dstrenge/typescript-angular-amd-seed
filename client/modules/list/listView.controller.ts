@@ -1,7 +1,7 @@
 ﻿/// <amd-dependency path="angular" />
 
 import listResourceImpl = require("./list.service");
-import ConstantsLib = require("./_list.constants");
+import Constants = require("./_list.constants");
 
 export interface IListViewControllerScope extends ng.IScope {
 	currentUser: any;
@@ -11,7 +11,7 @@ export interface IListViewControllerScope extends ng.IScope {
 }
 
 export class ListViewController {
-	public static $inject: string[] = ["$scope", ConstantsLib.Constants.ListServiceName, "$rootScope", "$routeParams"];
+	public static $inject: string[] = ["$scope", Constants.ListServiceName, "$rootScope", "$routeParams"];
 	constructor(
 		private $scope: IListViewControllerScope,
 		private ListItemService: listResourceImpl.IListItemResource,
@@ -26,16 +26,16 @@ export class ListViewController {
 	}
 
 	refresh(): void {
-		this.ListItemService.query((items: Array<listResourceImpl.IListItem>) => {
-			items.forEach((item: listResourceImpl.IListItem) => {
+		this.ListItemService.query((items: Array<listResourceImpl.IListItem>): void => {
+			items.forEach((item: listResourceImpl.IListItem): void => {
 				this.updateItem(item);
 			});
 		});
 	}
 
-	updateItem(item: listResourceImpl.IListItem) {
+	updateItem(item: listResourceImpl.IListItem): void {
 		var found: boolean = false;
-		this.$scope.items.forEach((existingItem: listResourceImpl.IListItem) => {
+		this.$scope.items.forEach((existingItem: listResourceImpl.IListItem): void => {
 			if (item.id === existingItem.id) {
 				found = true;
 			}
@@ -46,8 +46,7 @@ export class ListViewController {
 	}
 
 	addItem(item: string) : void {
-		if(item && item.length > 0)
-		{
+		if (item && item.length > 0) {
 			var listItem: listResourceImpl.IListItem = new this.ListItemService({
 					id: "id" + String(new Date().getTime()),
 					text: item

@@ -13,14 +13,6 @@ module Common {
 	export class WindowDimensions extends WindowDimensionsImpl {
 	};
 
-	export function addService(ngModule: ng.IModule, name: string, service: any): ng.IModule {
-		return ngModule.service(name, service);
-	}
-
-	export function addController(ngModule: ng.IModule, name: string, controller: any): ng.IModule {
-		return ngModule.controller(name, controller);
-	}
-
 	export function addDirective(ngModule: ng.IModule, name: string, directive: any): ng.IModule {
        return ngModule.directive(name, [].concat(directive.$inject, function (): Function {
               var args: Array<any> = Array.prototype.slice.call(arguments, 0);

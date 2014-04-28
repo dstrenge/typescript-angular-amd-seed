@@ -1,6 +1,6 @@
 ﻿/// <amd-dependency path="text!./listView.partial.html!strip" />
 import Common = require("../common/_common.module");
-import ConstantsLib = require("./_list.constants");
+import Constants = require("./_list.constants");
 import listViewImpl = require("./listView.controller");
 import listServiceImpl = require("./list.service");
 import listItemImpl = require("./listItem.directive");
@@ -18,10 +18,10 @@ module List {
 	};
 
 	export var listModule: ng.IModule = angular.module(moduleName, ["ngAnimate"])
-		.factory(ConstantsLib.Constants.ListServiceName, listServiceImpl.ListService);
+		.factory(Constants.ListServiceName, listServiceImpl.ListService)
+		.controller(Constants.ListViewName, listViewImpl.ListViewController);
 
-	Common.addController(listModule, ConstantsLib.Constants.ListViewName, listViewImpl.ListViewController);
-	Common.addDirective(listModule, ConstantsLib.Constants.ListItemName, listItemImpl.ListItemDirective);
+	Common.addDirective(listModule, Constants.ListItemName, listItemImpl.ListItemDirective);
 }
 
 export = List;

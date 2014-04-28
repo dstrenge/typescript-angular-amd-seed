@@ -1,11 +1,3 @@
-﻿ export interface IListConstants {
-	ListViewName: string;
-	ListServiceName: string;
-	ListItemName: string;
-}
- 
-export var Constants: IListConstants = {
-	ListViewName: "kx.list.controller.listView",
-	ListServiceName: "kx.list.service.list",
-	ListItemName: "kxListDirectiveListItem"
- };
+﻿export var ListViewName: string = "kx.list.controller.listView";
+export var ListServiceName: string = "kx.list.service.list";
+export var ListItemName: string = "kxListDirectiveListItem";
