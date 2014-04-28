@@ -6,22 +6,19 @@ import listServiceImpl = require("./list.service");
 import listItemImpl = require("./listItem.directive");
 var listViewPartial: any = require("text!./listView.partial.html!strip");
 
-module List {
-	export var moduleName: string = "kx.list";
+export var moduleName: string = "kx.list";
 
-	export interface IListPartials {
-		ListView: string;
-	}
-
-	export var Partials: IListPartials = {
-		ListView: listViewPartial
-	};
-
-	export var listModule: ng.IModule = angular.module(moduleName, ["ngAnimate"])
-		.factory(Constants.ListServiceName, listServiceImpl.ListService)
-		.controller(Constants.ListViewName, listViewImpl.ListViewController);
-
-	Common.addDirective(listModule, Constants.ListItemName, listItemImpl.ListItemDirective);
+export interface IListPartials {
+	ListView: string;
 }
 
-export = List;
+export var Partials: IListPartials = {
+	ListView: listViewPartial
+};
+
+var listModule: ng.IModule = angular.module(moduleName, ["ngAnimate"])
+	.factory(Constants.ListServiceName, listServiceImpl.ListService)
+	.controller(Constants.ListViewName, listViewImpl.ListViewController);
+
+Common.addDirective(listModule, Constants.ListItemName, listItemImpl.ListItemDirective);
+

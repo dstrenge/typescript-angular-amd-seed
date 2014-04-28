@@ -1,6 +1,5 @@
-﻿
-/// <amd-dependency path="text!./listItem.partial.html!strip" />
-var listViewPartial: any = require("text!./listItem.partial.html!strip");
+﻿/// <amd-dependency path="text!./listItem.partial.html!strip" />
+var listItemPartial: any = require("text!./listItem.partial.html!strip");
 
 export class ListItemDirective implements ng.IDirective {
 	public static $inject: string[] = ["$rootScope", "$compile"];
@@ -11,5 +10,5 @@ export class ListItemDirective implements ng.IDirective {
 	scope: Object = {
 		item: "=item"
 	};
-	template: string = listViewPartial;
+	template: string = listItemPartial;
 }

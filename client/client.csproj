@@ -334,9 +334,6 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="modules\common\application.model.ts" />
-    <TypeScriptCompile Include="modules\common\_common.constants.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="modules\common\_common.module.ts" />
     <TypeScriptCompile Include="modules\list\list.service.ts" />
     <TypeScriptCompile Include="modules\list\listItem.directive.ts" />
