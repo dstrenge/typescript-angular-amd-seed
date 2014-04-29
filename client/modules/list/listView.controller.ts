@@ -27,22 +27,11 @@ export class ListViewController {
 
 	refresh(): void {
 		this.ListItemService.query((items: Array<listResourceImpl.IListItem>): void => {
+			this.$scope.items.splice(0, this.$scope.items.length);
 			items.forEach((item: listResourceImpl.IListItem): void => {
-				this.updateItem(item);
+				this.$scope.items.push(item);
 			});
 		});
-	}
-
-	updateItem(item: listResourceImpl.IListItem): void {
-		var found: boolean = false;
-		this.$scope.items.forEach((existingItem: listResourceImpl.IListItem): void => {
-			if (item.id === existingItem.id) {
-				found = true;
-			}
-		});
-		if (!found) {
-			this.$scope.items.push(item);
-		}
 	}
 
 	addItem(item: string) : void {
