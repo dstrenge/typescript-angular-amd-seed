@@ -1,1 +1,4 @@
-﻿<div><span data-ng-bind="item.text" data-ng-attr-title="{{item.id}}"></span></div>
+﻿<div>
+    <span data-ng-bind="item.text" data-ng-attr-title="{{item.id}}"></span>
+    <button class="listItem-add-button" data-ng-click="controller.removeItem(item)">X</button>
+</div>

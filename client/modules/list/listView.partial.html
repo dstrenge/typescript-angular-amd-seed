@@ -1,11 +1,11 @@
 ﻿<div id="listView" data-ng-controller="kx.list.controller.listView">
 	<div>
 		<div class="listItem-entry-container">
-			<input class="listItem-entry-input" data-ng-model="newItem" type="text" placeholder="Enter text..." />
+            <input class="listItem-entry-input" data-ng-model="newItem" data-kx-enter="controller.addItem(newItem)" type="text" placeholder="Enter text..." />
 			<button class="listItem-add-button" data-ng-click="controller.addItem(newItem)">Add</button>
 		</div>
-		<div data-ng-repeat="item in items track by item.id" class="listItem">
-			<kx-list-directive-list-item item="item"></kx-list-directive-list-item>
-		</div>
+        <div data-ng-repeat="item in items track by item.id" class="listItem">
+            <kx-list-directive-list-item item="item"></kx-list-directive-list-item>
+        </div>
 	</div>
 </div>
