@@ -1,4 +1,4 @@
-﻿export class EnterBindDirective implements ng.IDirective {
+﻿export class EnterKeypressDirective implements ng.IDirective {
 	public static $inject: string[] = ["$rootScope", "$compile"];
     constructor(private $scope: ng.IScope, private $compile: ng.ICompileService) {        
     }
@@ -8,7 +8,7 @@
         element.bind("keydown keypress", function (event) {
             if (event.which === 13) {
                 scope.$apply(function () {
-                    scope.$eval(attrs['kxEnter'], { 'event': event });
+                    scope.$eval(attrs['kxEnterKeypress'], { 'event': event });
                 });
                 event.preventDefault();
             }

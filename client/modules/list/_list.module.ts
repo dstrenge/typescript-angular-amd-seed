@@ -5,7 +5,6 @@ import listViewImpl = require("./listView.controller");
 import listServiceImpl = require("./list.service");
 import listItemDirective = require("./listItem.directive");
 import listItemImpl = require("./listItem.controller");
-import EnterBindDirective = require("../common/enterBind.directive");
 var listViewPartial: any = require("text!./listView.partial.html!strip");
 
 export var moduleName: string = "kx.list";
@@ -18,11 +17,10 @@ export var Partials: IListPartials = {
 	ListView: listViewPartial
 };
 
-var listModule: ng.IModule = angular.module(moduleName, ["ngAnimate"])
+var listModule: ng.IModule = angular.module(moduleName, ["ngAnimate", Common.moduleName])
 	.factory(Constants.ListServiceName, listServiceImpl.ListService)
     .controller(Constants.ListViewName, listViewImpl.ListViewController)
     .controller(Constants.ListItemControllerName, listItemImpl.ListItemController);
 
 Common.addDirective(listModule, Constants.ListItemDirectiveName, listItemDirective.ListItemDirective);
-Common.addDirective(listModule, Constants.EnterBindDirectiveName, EnterBindDirective.EnterBindDirective);
 
