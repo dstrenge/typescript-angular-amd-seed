@@ -20,11 +20,11 @@ export class ListViewController {
 
 		$scope.controller = this;
 		$scope.items = [];
-        $scope.newItem = "";   
+        $scope.newItem = "";
 
-        $scope.$on('refresh', (event: any): void => {
+        $scope.$on("refresh", (event: any): void => {
             this.refresh();
-        });  
+        });
 
 		this.refresh();
 	}
@@ -34,7 +34,7 @@ export class ListViewController {
             this.$scope.items.splice(0, this.$scope.items.length);
 			items.forEach((item: listResourceImpl.IListItem): void => {
                 this.$scope.items.push(item);
-            });            
+            });
 		});
 	}
 

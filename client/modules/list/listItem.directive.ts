@@ -4,7 +4,7 @@ var listItemPartial: any = require("text!./listItem.partial.html!strip");
 
 export class ListItemDirective implements ng.IDirective {
 	public static $inject: string[] = ["$rootScope", "$compile"];
-    constructor(private $scope: ng.IScope, private $compile: ng.ICompileService) {        
+    constructor(private $scope: ng.IScope, private $compile: ng.ICompileService) {
 	}
 
 	restrict: string = "E";

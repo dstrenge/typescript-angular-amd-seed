@@ -17,13 +17,13 @@ export class ListItemController {
 		$rootScope: ng.IScope,
 		$routeParams: Object) {
 
-        $scope.controller = this;
-        $scope.items = [];
-	}	
+		$scope.controller = this;
+		$scope.items = [];
+	}
 
     removeItem(listItem: listResourceImpl.IListItem): void {
         listItem.$remove().then((): void => {
-            this.$scope.$emit('refresh');
+            this.$scope.$emit("refresh");
         });
     }
 }

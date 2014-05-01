@@ -21,6 +21,6 @@ export function addDirective(ngModule: ng.IModule, name: string, directive: any)
 	}));
 }
 
-var commonModule: ng.IModule =angular.module(moduleName, []);
+var commonModule: ng.IModule = angular.module(moduleName, []);
 
 addDirective(commonModule, Constants.EnterKeypressDirectiveName, EnterKeypressDirective.EnterKeypressDirective);
