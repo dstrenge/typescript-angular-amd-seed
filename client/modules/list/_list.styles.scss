@@ -99,24 +99,22 @@
 
 @keyframes listItem-leave {
     from {
-        left: 0;
         opacity: 1;
     }
 
     to {
-        left: -10px;
+        transform: scale(0) rotate(-360deg);
         opacity: 0;
     }
 }
 
 @-webkit-keyframes listItem-leave {
     from {
-        left: 0;
         opacity: 1;
     }
 
     to {
-        left: -10px;
+        -webkit-transform: scale(0) rotate(-360deg);
         opacity: 0;
     }
 }

@@ -334,9 +334,12 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="modules\common\application.model.ts" />
+    <TypeScriptCompile Include="modules\common\enterKeypress.directive.ts" />
     <TypeScriptCompile Include="modules\common\_common.module.ts" />
+    <TypeScriptCompile Include="modules\common\_common.constants.ts" />
     <TypeScriptCompile Include="modules\list\list.service.ts" />
     <TypeScriptCompile Include="modules\list\listItem.directive.ts" />
+    <TypeScriptCompile Include="modules\list\listItem.controller.ts" />
     <TypeScriptCompile Include="modules\list\listView.controller.ts" />
     <TypeScriptCompile Include="modules\common\windowDimensions.model.ts" />
     <TypeScriptCompile Include="modules\list\_list.constants.ts" />
