@@ -47,7 +47,7 @@
 
         it("should be able to delete items", function () {
             // set up a default response from our fake server when we query
-            httpBackend.whenGET("/SampleServer/api/list").respond([
+            httpBackend.expectGET("/SampleServer/api/list").respond([
                 { "id": "item1", "text": "item1" },
                 { "id": "item2", "text": "item2" },
                 { "id": "item3", "text": "item3" },

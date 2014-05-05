@@ -307,6 +307,7 @@
     <Content Include="lib\requirejs\text\text.js" />
     <Content Include="modules\list\listView.partial.html" />
     <Content Include="test\index.html" />
+    <TypeScriptCompile Include="Scripts\typings\jasmine-jquery\jasmine-jquery.d.ts" />
     <TypeScriptCompile Include="test\specRunner.ts" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
