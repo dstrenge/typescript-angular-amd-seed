@@ -2,6 +2,8 @@
 
 import Application = require("./application.model");
 import WindowDimensionsImpl = require("./windowDimensions.model");
+import Constants = require("./_common.constants");
+import EnterKeypressDirective = require("./enterKeypress.directive");
 
 export var moduleName: string = "kx.common";
 
@@ -19,5 +21,6 @@ export function addDirective(ngModule: ng.IModule, name: string, directive: any)
 	}));
 }
 
-angular.module(moduleName, []);
+var commonModule: ng.IModule = angular.module(moduleName, []);
 
+addDirective(commonModule, Constants.EnterKeypressDirectiveName, EnterKeypressDirective.EnterKeypressDirective);

@@ -20,34 +20,38 @@ export class ListViewController {
 
 		$scope.controller = this;
 		$scope.items = [];
-		$scope.newItem = "";
+        $scope.newItem = "";
+
+        $scope.$on("refresh", (event: any): void => {
+            this.refresh();
+        });
 
 		this.refresh();
 	}
 
-	refresh(): void {
-		this.ListItemService.query((items: Array<listResourceImpl.IListItem>): void => {
-			this.$scope.items.splice(0, this.$scope.items.length);
+    refresh(): void {
+        this.ListItemService.query((items: Array<listResourceImpl.IListItem>): void => {
+            this.$scope.items.splice(0, this.$scope.items.length);
 			items.forEach((item: listResourceImpl.IListItem): void => {
-				this.$scope.items.push(item);
-			});
+                this.$scope.items.push(item);
+            });
 		});
 	}
 
-	addItem(item: string) : void {
+    addItem(item: string): void {
 		if (item && item.length > 0) {
 			var listItem: listResourceImpl.IListItem = new this.ListItemService({
 					id: "id" + String(new Date().getTime()),
 					text: item
 				});
 
-			listItem.$save().then((): void => {
+            listItem.$save().then((): void => {
 				this.refresh();
 			});
 
 			this.$scope.newItem = "";
 		}
-	}
+    }
 }
 
 
