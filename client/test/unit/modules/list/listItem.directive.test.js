@@ -27,7 +27,7 @@
                 compile = $injector.get("$compile");
             });
 
-            // Insert a fake item for now
+            // insert a fake item for now
             var item = new listService({
                 id: "testID",
                 text: "test"
@@ -35,7 +35,7 @@
             scope.item = item;
 
             // create our directive
-            element = angular.element('<kx-list-directive-list-item item="item"></kx-list-directive-list-item>');
+            element = angular.element("<kx-list-directive-list-item item='item'></kx-list-directive-list-item>");
 
             // compile the element with the scope and digest
             compile(element)(scope);
@@ -48,22 +48,22 @@
         });
 
         it("should show the name of the item", function () {
-            // The directive should show a span that contains the name of the list item
-            var nameSpan = element.find('span');
+            // the directive should show a span that contains the name of the list item
+            var nameSpan = element.find("span");
             expect(nameSpan).toBeDefined();
             expect(nameSpan[0].innerHTML).toBe("test");
         });
 
         it("should have a remove button", function () {
-            // The directive should show a button that allows you to remove items
-            var removeButton = element.find('.listItem-add-button');
+            // the directive should show a button that allows you to remove items
+            var removeButton = element.find(".listItem-add-button");
             expect(removeButton).toBeDefined();
             expect(removeButton[0].innerHTML).toBe("X");
         });
 
         it("allows you to click on the remove button", function () {
-            // The directive should show a button that allows you to remove items
-            var removeButton = element.find('.listItem-add-button');
+            // the directive should show a button that allows you to remove items
+            var removeButton = element.find(".listItem-add-button");
             expect(removeButton).toBeDefined();
             expect(removeButton[0].innerHTML).toBe("X");
 

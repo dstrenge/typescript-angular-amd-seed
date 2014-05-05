@@ -1,12 +1,11 @@
 ﻿import ListConstants = require("modules/list/_list.constants");
-import ListItemController = require("modules/list/listItem.controller");
 import ListService = require("modules/list/list.service");
 
 describe("List Item Directive", function (): void {
 	var httpBackend: ng.IHttpBackendService;
 	var scope : any;
 	var compile : ng.ICompileService;
-	var element : any;
+	var element : ng.IAugmentedJQuery;
 	var listService: ListService.IListItemResource;
 
 	beforeEach(function (): void {
@@ -30,7 +29,7 @@ describe("List Item Directive", function (): void {
 			compile = $injector.get("$compile");
 		});
 
-		// Insert a fake item for now
+		// insert a fake item for now
 		var item : ListService.IListItem = new listService({
 			id: "testID",
 			text: "test"
@@ -38,7 +37,7 @@ describe("List Item Directive", function (): void {
 		scope.item = item;
 
 		// create our directive
-		element = angular.element('<kx-list-directive-list-item item="item"></kx-list-directive-list-item>');
+		element = angular.element("<kx-list-directive-list-item item='item'></kx-list-directive-list-item>");
 
 		// compile the element with the scope and digest
 		compile(element)(scope);
@@ -51,22 +50,22 @@ describe("List Item Directive", function (): void {
 	});
 
 	it("should show the name of the item", function() : void {
-		// The directive should show a span that contains the name of the list item
-		var nameSpan = element.find('span');
+		// the directive should show a span that contains the name of the list item
+		var nameSpan : ng.IAugmentedJQuery = element.find("span");
 		expect(nameSpan).toBeDefined();
 		expect(nameSpan[0].innerHTML).toBe("test");
 	});
 
 	it("should have a remove button", function (): void {
-		// The directive should show a button that allows you to remove items
-		var removeButton = element.find('.listItem-add-button');
+		// the directive should show a button that allows you to remove items
+		var removeButton : ng.IAugmentedJQuery = element.find(".listItem-add-button");
 		expect(removeButton).toBeDefined();
 		expect(removeButton[0].innerHTML).toBe("X");
 	});
 
-	it ("allows you to click on the remove button", function() : void {	
-		// The directive should show a button that allows you to remove items
-		var removeButton = element.find('.listItem-add-button');
+	it ("allows you to click on the remove button", function() : void {
+		// the directive should show a button that allows you to remove items
+		var removeButton : ng.IAugmentedJQuery = element.find(".listItem-add-button");
 		expect(removeButton).toBeDefined();
 		expect(removeButton[0].innerHTML).toBe("X");
 
