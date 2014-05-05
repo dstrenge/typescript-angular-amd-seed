@@ -15,6 +15,7 @@ require.config({
         "angular-animate": "../lib/angularjs/angular-animate",
         "angular-route": "../lib/angularjs/angular-route",
         "angular-resource": "../lib/angularjs/angular-resource",
+        "angular-mocks": "../lib/angularjs/angular-mocks",
         "jasmine": "../lib/jasmine/jasmine",
         "jasmine-html": "../lib/jasmine/jasmine-html",
         "jasmine.async": "../lib/jasmine/jasmine.async",
@@ -41,6 +42,10 @@ require.config({
             deps: ["angular"],
             exports: "angular-resource"
         },
+        "angular-mocks": {
+            deps: ["angular"],
+            exports: "angular-mocks"
+        },
         "jasmine": {
             exports: "jasmine"
         },
@@ -55,7 +60,7 @@ require.config({
     }
 });
 
-require(["jquery", "jasmine-html", "jasmine.async", "angular", "app/app.module"], function ($, jasmine, jasmineasync, angular) {
+require(["jquery", "jasmine-html", "jasmine.async", "angular", "angular-resource", "angular-route", "angular-mocks", "app/app.module"], function ($, jasmine, jasmineasync, angular) {
     var jasmineEnv = jasmine.getEnv();
     jasmineEnv.updateInterval = 1000;
 
@@ -70,13 +75,13 @@ require(["jquery", "jasmine-html", "jasmine.async", "angular", "app/app.module"]
     var specs = [];
 
     specs.push("test/unit/modules/list/list.service.test.js");
+    specs.push("test/unit/modules/list/listView.controller.test.js");
+    specs.push("test/unit/modules/list/listItem.controller.test.js");
 
     $(function () {
         require(specs, function () {
             jasmineEnv.execute();
         });
     });
-
-    angular.bootstrap(document, ['kx.application']);
 });
 //# sourceMappingURL=specRunner.js.map

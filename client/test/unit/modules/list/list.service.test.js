@@ -43,17 +43,17 @@
             });
 
             item.$save(function () {
-                expect(item.text).toBe('hello');
-                expect(item.id).toBe('hello');
+                expect(item.text).toBe("hello");
+                expect(item.id).toBe("hello");
 
                 item.$delete(function () {
                     done();
                 }, function () {
-                    expect('item to be deleted').toBe(false);
+                    expect("item to be deleted").toBe(false);
                 });
                 done();
             }, function () {
-                expect('item to be created').toBe(false);
+                expect("item to be created").toBe(false);
                 done();
             });
         });

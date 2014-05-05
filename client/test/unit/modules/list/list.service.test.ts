@@ -52,21 +52,21 @@ describe("List Service", function () : void {
 
 		item.$save(
 			function (): void {
-				expect(item.text).toBe('hello');
-				expect(item.id).toBe('hello');
+				expect(item.text).toBe("hello");
+				expect(item.id).toBe("hello");
 
 				item.$delete(
 					function (): void {
 						done();
 					},
-					function () {
-						expect('item to be deleted').toBe(false);
+					function (): void {
+						expect("item to be deleted").toBe(false);
 					}
 				);
 				done();
 			},
 			function (): void {
-				expect('item to be created').toBe(false);
+				expect("item to be created").toBe(false);
 				done();
 			}
 		);

@@ -311,6 +311,9 @@
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
+    <TypeScriptCompile Include="test\unit\modules\list\listItem.controller.test.ts" />
+    <TypeScriptCompile Include="test\unit\modules\list\listItem.directive.test.ts" />
+    <TypeScriptCompile Include="test\unit\modules\list\listView.controller.test.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\angularjs\angular-animate.min.js.map" />
