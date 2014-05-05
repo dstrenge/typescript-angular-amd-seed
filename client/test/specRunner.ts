@@ -80,7 +80,5 @@ require(["jquery", "jasmine-html", "jasmine.async", "angular", "app/app.module"]
 		});
 	});
 
-
-
 	angular.bootstrap(document, ['kx.application']);
 });
