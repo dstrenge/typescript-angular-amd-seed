@@ -292,6 +292,13 @@
     <Content Include="app\app.styles.css.map">
       <DependentUpon>app.styles.css</DependentUpon>
     </Content>
+    <Content Include="lib\jasmine\jasmine-html.js" />
+    <Content Include="lib\jasmine\jasmine-jquery.js" />
+    <Content Include="lib\jasmine\jasmine.async.js" />
+    <Content Include="lib\jasmine\jasmine.css" />
+    <Content Include="lib\jasmine\jasmine.js" />
+    <Content Include="lib\jquery\jquery-1.7.1.js" />
+    <Content Include="lib\jquery\jquery-1.7.1.min.js" />
     <Content Include="modules\list\listItem.partial.html" />
     <Content Include="modules\list\_list.styles.scss" />
     <None Include="Scripts\_references.js" />
@@ -299,6 +306,8 @@
     <Content Include="lib\requirejs\require.min.js" />
     <Content Include="lib\requirejs\text\text.js" />
     <Content Include="modules\list\listView.partial.html" />
+    <Content Include="test\index.html" />
+    <TypeScriptCompile Include="test\specRunner.ts" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -349,10 +358,12 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-scenario.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jasmine\jasmine.async.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jasmine\jasmine.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\requirejs\require.d.ts" />
+    <TypeScriptCompile Include="test\unit\modules\list\list.service.test.ts" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
